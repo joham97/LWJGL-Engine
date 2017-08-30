@@ -15,4 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'LWJGL Engine Empty'
+rootProject.name = 'LWJGL-Engine'
