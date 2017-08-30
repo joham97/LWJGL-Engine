@@ -7,6 +7,9 @@ import static org.lwjgl.glfw.GLFW.GLFW_KEY_RIGHT;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_S;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_W;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.joml.Vector3f;
 import org.lwjgl.openal.AL11;
 import org.lwjglb.engine.IGameLogic;
@@ -31,7 +34,7 @@ public class DummyGame implements IGameLogic {
 
     private Scene scene;
     
-    private GameItem[] gameItems;
+    private List<GameItem> gameItems;
 
     public DummyGame() {
         this.renderer = new Renderer();
@@ -47,9 +50,9 @@ public class DummyGame implements IGameLogic {
 
         this.scene = new Scene();
 
-        this.gameItems = new GameItem[0];
+        this.gameItems = new ArrayList<>();
        
-        this.scene.setGameItems(this.gameItems);
+        this.scene.addGameItems(this.gameItems);
 
         // Shadows
         this.scene.setRenderShadows(false);
